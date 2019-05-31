@@ -22,16 +22,25 @@ cd dwellingly_backend
 pip install -r requirements.txt
 ```
 
+4) Run
+
+```bash
+python3 run.py
+```
+
+5) Open up [localhost:5000](localhost:5000)
+
+
 ## General Organization
 
 This flask project is using the blueprint model - where related views and models are grouped together.
 
 ```bash
-- Home
-- Admin
-- Staff
-- Property Manager
-- Tenants
+- Home (/)
+- Admin (/admin)
+- Staff (/staff)
+- Property Manager (/property_manager)
+- Tenant (/tenant)
 ```
 
 
