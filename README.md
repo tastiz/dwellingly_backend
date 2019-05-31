@@ -28,7 +28,7 @@ pip install -r requirements.txt
 python3 run.py
 ```
 
-5) Open up [localhost:5000](localhost:5000)
+5) Open up [localhost:5000](http://localhost:5000)
 
 
 ## General Organization
