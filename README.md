@@ -19,7 +19,7 @@ cd dwellingly_backend
 3) Run 
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 4) Run
@@ -37,6 +37,13 @@ This flask project is using the blueprint model - where related views and models
 
 ```bash
 - Home (/)
+- About (/about)
+- Sign Up (/signup)
+- Login (/login)
+- Terms and Conditions (/terms_and_conditions)
+- Forgot Password (/forgot_password)
+
+
 - Admin (/admin)
 - Staff (/staff)
 - Property Manager (/property_manager)
