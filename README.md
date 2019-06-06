@@ -40,8 +40,8 @@ This flask project is using the blueprint model - where related views and models
 - About (/about)
 - Sign Up (/signup)
 - Login (/login)
-- Terms and Conditions (/terms_and_conditions)
-- Forgot Password (/forgot_password)
+- Terms and Conditions (/termsandconditions)
+- Forgot Password (/password)
 
 
 - Admin (/admin)
