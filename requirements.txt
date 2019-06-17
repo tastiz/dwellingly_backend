@@ -1,27 +1,51 @@
-bcrypt==3.1.6
-blueprint==3.4.2
-certifi==2019.3.9
-cffi==1.12.3
-chardet==3.0.4
-Click==7.0
-docopt==0.6.2
-fire==0.1.2
+#Flask Base
 Flask==1.0.2
-Flask-Bcrypt==0.7.1
-Flask-Login==0.4.1
-idna==2.8
-itsdangerous==1.1.0
-Jinja2==2.10.1
-MarkupSafe==1.1.1
-peewee==2.8.8
-pipenv==2018.11.26
-pipreqs==0.4.9
-pycparser==2.19
-requests==2.21.0
-six==1.12.0
-urllib3==1.24.2
-virtualenv==16.6.0
-virtualenv-clone==0.5.3
-Werkzeug==0.15.2
-Workon==0.8.2
-yarg==0.1.9
+flask_restful==0.1.0 
+
+# Application server for both development and production.
+gunicorn==19.4.5
+
+# Testing and static analysis.
+pytest==2.9.1
+pytest-cov==2.2.1
+mock==1.3.0
+flake8==2.5.4
+
+# CLI.
+Click==6.4
+
+# Data and workers.
+psycopg2==2.6.1
+Flask-SQLAlchemy==2.1
+alembic==0.8.6
+redis==2.10.5
+celery==3.1.23
+
+
+# bcrypt==3.1.6
+# blueprint==3.4.2
+# certifi==2019.3.9
+# cffi==1.12.3
+# chardet==3.0.4
+# Click==7.0
+# docopt==0.6.2
+# fire==0.1.2
+
+# Flask-Bcrypt==0.7.1
+# Flask-Login==0.4.1
+# idna==2.8
+# itsdangerous==1.1.0
+# Jinja2==2.10.1
+# MarkupSafe==1.1.1
+# peewee==2.8.8
+# pipenv==2018.11.26
+# pipreqs==0.4.9
+# pycparser==2.19
+# requests==2.21.0
+# six==1.12.0
+# urllib3==1.24.2
+# virtualenv==16.6.0
+# virtualenv-clone==0.5.3
+# Werkzeug==0.15.2
+# Workon==0.8.2
+# yarg==0.1.9
