@@ -4,7 +4,7 @@ from user import User
 users = [
     User(1, "BigHead", "password", "bighead","bighead@dwellingly.com", "false" ),
     User(2, "Default User", "userPassword", "defaultUser","user0@dwellingly.com", "false" ),
-    User(2, "Default User1", "userPassword", "defaultUser1","user10@dwellingly.com", "false" ),
+    User(2, "Default User1", "userPassword", "defaultUser1","user10@dwellingly.com", "false" )
 ]
 
 username_mapping = {u.username: u for u in users}
