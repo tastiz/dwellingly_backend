@@ -1,46 +1,44 @@
 # dwellingly_backend
 
-Flask based Backend for Dwellingly 
+Flask based Backend API for Dwellingly 
 
 ## Get Set Up
+This project relies on Docker and Docker-Compose 
 
-1) Clone the project
+1) Download Docker here:
+
+Windows: https://docs.docker.com/docker-for-windows/
+
+Mac:https://docs.docker.com/docker-for-mac/ 
+
+2) Download Docker-Compose here:
+https://docs.docker.com/compose/install/
+
+
+3) Clone the project
 
 ```bash
 git clone https://github.com/codeforpdx/dwellingly_backend.git
 ```
 
-2) cd into the directory of the project
+4) cd into the directory of the project
 
 ```bash
 cd dwellingly_backend
 ```
 
-3) Run 
+5) Run 
 
 ```bash
-pip install -r requirements.txt
+sudo docker-compose up --build 
+
 ```
 
-4) Run
-
-```bash
-python3 run.py
-```
-
-5) Open up [localhost:5000](http://localhost:5000)
-
+6) Open up [localhost:5000](http://localhost:5000)
 
 ## General Organization
 
-This flask project is using the blueprint model - where related views and models are grouped together.
+This flask project is using the flaskRestful model - where resources and models are separated into their respective packages. 
 
-```bash
-- Home (/)
-- Admin (/admin)
-- Staff (/staff)
-- Property Manager (/property_manager)
-- Tenant (/tenant)
-```
 
 
