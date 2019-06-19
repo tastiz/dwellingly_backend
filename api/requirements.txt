@@ -1,3 +1,4 @@
 Flask
 flask_restful
 Flask-JWT
+Flask-SQLAlchemy

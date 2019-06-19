@@ -6,4 +6,7 @@ class User:
         self.password = password
         self.email = email
         self.archived = archived
+    
+    def userMethod():
+        pass 
         

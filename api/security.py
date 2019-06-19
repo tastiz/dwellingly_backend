@@ -1,5 +1,5 @@
 from user import User
-
+#yeah... this isn't finished yet. 
 
 users = [
     User(1, "BigHead", "password", "bighead","bighead@dwellingly.com", "false" ),
