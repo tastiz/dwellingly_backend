@@ -1,5 +1,6 @@
 from user import User
 #yeah... this isn't finished yet. 
+#bcrypt hash passswords
 
 users = [
     User(1, "BigHead", "password", "bighead","bighead@dwellingly.com", "false" ),
