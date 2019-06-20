@@ -9,7 +9,7 @@ This project relies on Docker and Docker-Compose
 
 Windows: https://docs.docker.com/docker-for-windows/
 
-Mac:https://docs.docker.com/docker-for-mac/ 
+Mac:https://docs.docker.com/v17.12/docker-for-mac/install/#download-docker-for-mac
 
 2) Download Docker-Compose here:
 https://docs.docker.com/compose/install/
