@@ -1,4 +1,5 @@
 from user import User
+
 # yeah... this isn't finished yet.
 
 users = [

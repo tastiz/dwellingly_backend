@@ -11,6 +11,8 @@ Windows: https://docs.docker.com/docker-for-windows/
 
 Mac:https://docs.docker.com/docker-for-mac/ 
 
+Linux:
+
 2) Download Docker-Compose here:
 https://docs.docker.com/compose/install/
 
