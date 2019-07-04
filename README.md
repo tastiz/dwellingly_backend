@@ -42,5 +42,19 @@ sudo docker-compose up --build
 
 This flask project is using the flaskRestful model - where resources and models are separated into their respective packages. 
 
+```bash
+- Home (/)
+- About (/about)
+- Sign Up (/signup)
+- Login (/login)
+- Terms and Conditions (/termsandconditions)
+- Forgot Password (/password)
+
+
+- Admin (/admin)
+- Staff (/staff)
+- Property Manager (/property_manager)
+- Tenant (/tenant)
+```
 
 
