@@ -1,48 +1,11 @@
-from flask import Flask, jsonify, request
-from flask_restful import Resource, Api, reqparse
-from flask_jwt import JWT, jwt_required
-from security import authenticate, identity
-
-
-app = Flask(__name__)
-app.debug = True
-app.config['SECRET_KEY'] = 'super-secret'  # TODO: not this...
-#app.secret_key = "1asdfha8dsfh3HUIE" #replace with .env keep it secret, keep it safe
-api = Api(app)
-
-
-jwt = JWT(app, authenticate, identity)  # /auth token
-#jwt will need to be implemented tested works with user class. will need to be tied to DB and put into
-#Authorization header: JWT %HASH%
-
-
-@app.route('/')
-def running():
-    return "Welcome to Dwellingly"
-
-
-userList = [
-    {
-        "name": "Default User",
-        "password": "userPassword",
-        "username": "defaultUser",
-        "email": "user1@dwellingly.com",
-        "archived": "false",
-        "id": "user0"
-    },
-    {
-        "name": "Default User2",
-        "password": "userPassword",
-        "username": "defaultUser2",
-        "email": "user2@dwellingly.com",
-        "archived": "false",
-        "id": "user1"
-    }
-]
-
+from flask import Blueprint
+from flask_restful import Api, Resource, reqparse
+from flask_jwt import jwt_required
 
 # | POST   | `v1/users/`     | Creates a new user     |
 # | GET    | `v1/users/`     | Gets all users         |
+
+
 class Users(Resource):
     @jwt_required()
     def get(self):
@@ -61,7 +24,7 @@ class Users(Resource):
             "uid":uid
             }
          userList.append(new_user)
-        
+
          return new_user, 201
 
 # | GET    | `v1/users/:uid` | Gets a single user     |
@@ -75,23 +38,23 @@ class User(Resource):
 
     def get(self, uid):
         #finally get to show off my lamda functions...
-        user = next(filter(lambda x: x["uid"] == uid, userList), None) 
+        user = next(filter(lambda x: x["uid"] == uid, userList), None)
         return {"user": user}, 200 if user else 404
 
     def patch(self, uid):
-        user = next(filter(lambda x: x["uid"] == uid, userList), None) 
+        user = next(filter(lambda x: x["uid"] == uid, userList), None)
         # request_data = request.get_json()
         parser = reqparse.RequestParser()
-        parser.add_argument('name', help="need a email") 
-        parser.add_argument('password', required=True, help="need a password") 
-        parser.add_argument('username', help="need a username") 
-        parser.add_argument('email', help="need a email") 
+        parser.add_argument('name', help="need a email")
+        parser.add_argument('password', required=True, help="need a password")
+        parser.add_argument('username', help="need a username")
+        parser.add_argument('email', help="need a email")
 
         request_data = parser.parse_args()
 
         if user:
             user.update(request_data)
-        return {"user": user}, 200 
+        return {"user": user}, 200
 
     def put(self, uid):
         for user in userList:
@@ -101,7 +64,7 @@ class User(Resource):
                 else:
                     user["archived"] = "false"
                 return user, 201
-    
+
         return {"message": "User not found"}, 404
 
     def delete(self, uid):
@@ -118,31 +81,11 @@ class User(Resource):
 # | PUT    | `v1/properties/:uid` | Archives a single property |
 # | DELETE | `v1/properties/:uid` | Deletes a single property  |
 
-class Property(Resource):
-    def get(self,uid):
-        pass
 
-    def patch(self,uid):
-        pass
+# instantiate Blueprint
+user_api = Blueprint('resources.users', __name__)
 
-    def put(self, uid):
-        pass
-
-    def delete(self, uid):
-        pass
-
-class Properties(Resource):
-    def get(self,uid):
-        pass
-
-    def post(self,uid):
-        pass  
-
-
+# instantiate API and add resources
+api = Api()
 api.add_resource(Users, "/v1/users")
 api.add_resource(User, "/v1/users/<string:uid>")
-api.add_resource(Properties, "/v1/properties")
-api.add_resource(Property, "/v1/properties/<string:uid>")
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
