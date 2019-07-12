@@ -72,15 +72,6 @@ class User(Resource):
         userList = next(filter(lambda x: x["uid"] != uid, userList), None)
         return {"message": "user deleted"}
 
-# | method | route                | action                     |
-# | :----- | :------------------- | :------------------------- |
-# | POST   | `v1/properties/`     | Creates a new property     |
-# | GET    | `v1/properties/`     | Gets all properties        |
-# | GET    | `v1/properties/:uid` | Gets a single property     |
-# | PATCH  | `v1/properties/:uid` | Updates a single property  |
-# | PUT    | `v1/properties/:uid` | Archives a single property |
-# | DELETE | `v1/properties/:uid` | Deletes a single property  |
-
 
 # instantiate Blueprint
 user_api = Blueprint('resources.users', __name__)
