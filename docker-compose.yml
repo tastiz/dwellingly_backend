@@ -2,10 +2,13 @@ version: '3'
 
 services:
   web:
-    build: ./api
+    build: .
     ports: 
       - "5000:5000"
-      
+    environment:
+      - FLASK_APP=api/__init__.py
+      - FLASK_ENV=development
+      - FLASK_HOST='0.0.0.0'
 
 
   
