@@ -1,14 +1,28 @@
 version: '3'
 
 services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: users
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data \
+    ports:
+      - "6432:6432"
+
   web:
     build: .
+    depends_on:
+      - db
     ports: 
       - "5000:5000"
     environment:
       - FLASK_APP=api/__init__.py
       - FLASK_ENV=development
       - FLASK_HOST='0.0.0.0'
+  
 
 
   
