@@ -1,4 +1,4 @@
-from user import User
+from api.user import User
 
 # yeah... this isn't finished yet.
 
@@ -10,7 +10,7 @@ users = [
 ]
 
 username_mapping = {u.username: u for u in users}
-user_id_mapping = {u.id: u for u in users}
+user_id_mapping = {u.uid: u for u in users}
 useremail_mapping = {u.email: u for u in users}
 
 
