@@ -8,7 +8,7 @@ python:
 branches:
 
   only:
-    - travis_intregrate
+    - api
 
 services:
   - docker
