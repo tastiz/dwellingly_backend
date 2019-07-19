@@ -22,6 +22,7 @@ jwt = JWT(app, authenticate, identity)  # /auth token
 #jwt will need to be implemented tested works with user class. will need to be tied to DB and put into
 #Authorization header: JWT %HASH%
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(25), unique=True)
