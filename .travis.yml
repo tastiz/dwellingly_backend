@@ -13,7 +13,8 @@ branches:
 services:
   - docker
 
-before_install:
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
   - docker-compose up --build
 
 script:
