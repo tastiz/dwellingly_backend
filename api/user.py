@@ -1,5 +1,7 @@
 
 #don't pay attention 
+
+
 class User:
     def __init__(self, uid, name, password, username, email, archived):
         self.uid = uid
@@ -9,6 +11,5 @@ class User:
         self.email = email
         self.archived = archived
     
-    def userMethod():
-        pass 
-        
+    def user_method(self):
+        pass

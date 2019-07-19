@@ -1,13 +1,13 @@
 import pytest
 from api import create_app
 
+
 @pytest.fixture()
 def app():
     """
     returns a instance of the application object with testing config
 
-    :var app: function
-    :rtype: object: Flask_application
+    :rtype: object: Flask_application instance
     """
     app = create_app({
         'TESTING': True,
@@ -32,4 +32,3 @@ def client(app):
     # TODO setup and teardown test DB
 
     return app.test_client()
-
