@@ -30,7 +30,7 @@ def create_app(test_config=None):
     app.config.from_mapping(
         DEBUG=True,
 
-    )
+        )
 
     try:
         # creates instance dir
@@ -51,5 +51,3 @@ def create_app(test_config=None):
         return 'welcome to dwellingly'
 
     return app
-
-

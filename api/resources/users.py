@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from flask_restful import Api, Resource, reqparse
 from flask_jwt import jwt_required
 
@@ -12,25 +12,26 @@ class Users(Resource):
         return {"users": userList}
 
     def post(self):
-         uid = "user" + str(len(userList)) #replace with better id hash
-         request_data = request.get_json()
+        uid = "user" + str(len(userList)) #replace with better id hash
+        request_data = request.get_json()
 
-         new_user = {
+        new_user = {
             "name": request_data["name"],
             "password": request_data["password"],
             "username": request_data["username"],
             "email": request_data["email"],
             "archived": "false",
-            "uid":uid
+            "uid": uid
             }
-         userList.append(new_user)
+        userList.append(new_user)
 
-         return new_user, 201
+        return new_user, 201
 
 # | GET    | `v1/users/:uid` | Gets a single user     |
 # | PATCH  | `v1/users/:uid` | Updates a single user  |
 # | PUT    | `v1/users/:uid` | Archives a single user |
 # | DELETE | `v1/users/:uid` | Deletes a single user  |
+
 
 class User(Resource):
     # @jwt_required()
