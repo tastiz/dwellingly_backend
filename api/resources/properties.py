@@ -15,7 +15,7 @@ from flask_restful import Api, Resource
 
 # single property resource
 class Property(Resource):
-    def get(self,uid):
+    def get(self, uid):
         pass
 
     def patch(self,uid):
@@ -30,10 +30,10 @@ class Property(Resource):
 
 # multiple property resources
 class Properties(Resource):
-    def get(self,uid):
+    def get(self, uid):
         pass
 
-    def post(self,uid):
+    def post(self, uid):
         pass
 
 
