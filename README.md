@@ -56,10 +56,10 @@ flask run
 
 ```
 
-###General Architecture
+### General Architecture
 This flask project is using the flask application factory and flaskRestful model patterns
 
-####application factory  example:
+### application factory  example:
 ````
 def create_app(config_filename):
 
@@ -81,7 +81,7 @@ def create_app(config_filename):
 
     return app
 ````
-#####more info:
+##### more info:
 https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/#application-factories
 
 
