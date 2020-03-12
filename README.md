@@ -1,3 +1,7 @@
+#NOT A CURRENT PROJECT 3/11/20
+LINK TO CURRENT GIT: https://github.com/codeforpdx/dwellinglybackend
+
+
 # dwellingly_backend
 
 Flask based Backend API for Dwellingly 
